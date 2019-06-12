@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 
 const routes = require("./routes")
 const db = require("./models")
@@ -7,6 +8,8 @@ const app = express();
 
 // environment variable PORT or 3000 if unset
 const port = process.env.PORT || 3000;
+
+app.use(cors());
 
 // Add middleware for parsing the body to req.body
 // middlewares are executed in the order added, so add before routes
